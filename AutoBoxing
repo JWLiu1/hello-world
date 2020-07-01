@@ -1,0 +1,40 @@
+package project1;
+
+public class AutoBoxing {
+	public static void main(String[] args) {
+		Integer aInteger=1000;
+		Integer aInteger2=1000;
+		System.out.println("值为1000的Integer类对象,aInteger==aInteger2?    "+(aInteger==aInteger2));
+		Integer aInteger3=127;
+		Integer aInteger4=127;
+		System.out.println("值为100的Integer类对象,aInteger3==aInteger4?    "+(aInteger3==aInteger4));
+		Integer aInteger5=128;
+		Integer aInteger6=128;
+		System.out.println("值为100的Integer类对象,aInteger5==aInteger6?    "+(aInteger5==aInteger6));
+		System.out.println("***Integer类型的包装类类对象的值在-128~127，其==的比较值为true，即其内存地址相同***");
+		System.out.println();
+		/**
+		 * test int basic data type
+		 */
+		int a=1000;
+		int b=1000;
+		System.out.println("值为1000的基本数据类型int a==b?  "+(a==b));
+		
+		/**
+		 * test String basic data type
+		 */
+		String aString1="he is a boy.";
+		String aString2="he is a boy.";
+		System.out.println("值为\"he is a boy.\"的基本数据类型String aString1==aString2?  "+(aString1==aString2));
+		
+		/**
+		 * test double basic data type
+		 */
+		double d1=1000;
+		double d2=1000;
+		System.out.println("值为1000的基本数据类型double d1==d2?"+(d1==d2));
+		
+		System.out.println("***基本数据类型，包括int，double，String，char，byte，long，float,其值用\"==\"进行比较，***\n相同值会返回true，\"==\"比较的是内存地址，基本数据类型的值在一个库中，引用相同的对象，\r因而具有相同的内存地址，故而用==比较结果返回true");
+	}
+
+}
