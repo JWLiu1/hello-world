@@ -1,0 +1,33 @@
+
+package project1;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
+
+public class DirIO {
+		public static void main(String[] args) {
+		 try {
+			Path aPath=Paths.get("D:\\Java\\TestDir\\myfile.txt");
+			byte[] data=Files.readAllBytes(aPath);
+			String aString=new String(data,"GB2312");
+			//GB2312,GBK,GB18030都是中文编码系统，utf-8,utf-16,unicode都是世界编码，但是会乱码识别不了中文。
+			System.out.println(aString);
+		 }
+		 catch (Exception e)
+	        {
+	            System.out.println("读取文件内容出错");
+	            e.printStackTrace();
+	        }
+		 
+		//File aFile=new File("D:\\Java\\TestDir\\myfile.txt");
+		//Scanner aInputDir=new Scanner(aFile);
+		//PrintWriter aOut=new PrintWriter("D:\\Java\\TestDir\\myfile.txt",StandardCharsets.UTF_8);
+	}
+
+}
+
+
