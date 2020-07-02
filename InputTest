@@ -1,0 +1,25 @@
+package project1;
+import java.util.*;
+public class InputTest {
+	public static void main(String[] args) {
+		
+		Scanner aInput=new Scanner(System.in);
+		System.out.println("what's your name?");
+		String aNameString= aInput.nextLine();
+		System.out.println("how old are you?");
+		int aAge=aInput.nextInt();
+		//System.out.println("Hello, "+aNameString+". "+ "you will be "+(aAge+1)+" next year.");
+		System.out.printf("hello, %s . you will be %d in the next year",aNameString,(aAge+1));
+		
+		
+		//测试printf
+		System.out.printf("%,+(.3f",-10000/3.0);
+		//利用String.format静态方法创建格式化的字符串。
+		String message=String.format("Hello, %s. Next year, you'll be %d",aNameString,aAge);
+		System.out.println(message);
+		
+		//日期的格式化输出
+		System.out.printf("%tc",new Date());
+	}
+
+}
