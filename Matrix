@@ -1,0 +1,19 @@
+/*
+ * 利用二维数组进行格式话输出
+ */
+package project1;
+
+public class Matrix {
+	public static void main(String [] args) {
+		int arrayName[][]=new int[3][4];
+		for(int i=0;i<arrayName.length;i++) {	//这里的这个length指第一维的长度
+			for(int j=0;j<arrayName[i].length;j++) {	//这里的length指第二维长度
+				System.out.print("*");
+				//System.out.print(arrayName[i][j]);	//int类型默认值为0
+			}
+			System.out.println();
+		}
+		
+	}
+
+}
