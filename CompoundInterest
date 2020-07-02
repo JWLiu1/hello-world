@@ -1,0 +1,40 @@
+/**
+ * 进行二维数组的学习，赋值和打印，以后经常看看，加深理解
+ */
+package project1;
+
+public class CompoundInterest {
+	public static void main(String[] args) {
+		final double S_RATE=10;
+		final int N_RATE=6;
+		final int N_YEAR=10;
+		
+		double[] rate=new double[N_RATE];
+		for(int i=0;i<rate.length;i++) {
+			rate[i]=(S_RATE+i)/100;
+		}
+		
+		double[][] balance=new double[N_YEAR][N_RATE];
+		
+		for(int i=0;i<balance[0].length;i++) {
+			balance[0][i]=100000;
+		}
+		
+		//计算二维矩阵
+		for(int i=1;i<balance.length;i++) {
+			for(int j=0;j<balance[i].length;j++) {
+				double interest=balance[i-1][j]*rate[j];
+				balance[i][j]=balance[i-1][j]+interest;
+			}
+		}
+		//打印二维矩阵
+		for(double[]a:balance) {
+			for(double e:a) {
+				System.out.printf("%15.2f",e);
+			}
+			System.out.println();
+		}
+		
+	}
+
+}
