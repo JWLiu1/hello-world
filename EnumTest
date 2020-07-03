@@ -1,0 +1,54 @@
+package project1;
+
+import java.util.*;
+
+/**
+ * this program demonstrates enumerated types
+ * @author 10279207
+ *
+ */
+
+
+public class EnumTest {
+	public static void main(String[] args) {
+		Scanner aScanner=new Scanner(System.in);
+		System.out.println("enter a size:(SMALL,MEDIUM,LARGE,EXTRA_LARGE),or a direction:(EAST,SOUTH,WEST,NORTH)");
+		String inputString=aScanner.next().toUpperCase();
+		Size aSize=Enum.valueOf(Size.class, inputString);//返回给定类Size中有指定名字（inputString）的枚举常量aSize
+		System.out.print("clothes size="+aSize.toString()+"\t");
+		System.out.println(aSize.getAbbreviation());
+	}
+
+}
+
+//declare enumeration class
+enum Size{
+	SMALL("S"),MEDIUM("M"),LARGE("L"),EXTRA_LARGE("XL");
+	private String abbreviation;
+	private Size(String abbre) {
+		abbreviation=abbre;
+	}
+	public String getAbbreviation() {
+		return abbreviation;
+	}
+}
+
+//declare another enumeration class,此程序中未使用。
+/*
+enum Direction{
+	EAST("E",1),SOUTH("S",2),WEST("W",3),NORTH("N",4);
+	private String directionAbbre;
+	private int directionNumAbbre;
+	private Direction(String abbre,int a) {
+		directionAbbre=abbre;
+		directionNumAbbre=a;
+	}
+	public String getdirectionAbbre() {
+		return directionAbbre;
+	}
+	public int getdirectionNumAbbre() {
+		return directionNumAbbre;
+	}
+	
+}
+*/
